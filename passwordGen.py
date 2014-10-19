@@ -4,13 +4,11 @@ import math
 from random import randint
 parser=argparse.ArgumentParser(description='Randomly generate passwords with a specified amount of entropy.')
 parser.add_argument('--bits', dest='bits', help='How many bits of entropy are required.')
-parser.add_argument('--type', dest='type', help='The type of password to generate (word or character). Defaults to word.')
 parser.add_argument('--verify', dest='verify', help='If argument is  supplied, program will verify checksum. ')
 parser.add_argument('--password', dest='password', help='If verify is set to True, then a password must be supplied.')
 parser.add_argument('--checksum', dest='checksum', help='The checksum to go with the password supplied.')
 args = parser.parse_args()
 bits = args.bits
-type = args.type
 
 
 def genWordPassword(bits):
@@ -63,11 +61,6 @@ if args.verify is not None:
         if wordList.index(args.checksum) != wordList.index(genWordChecksum(args.password)): 
                 print "You forgot the word: " + recoverWord(args.password, args.checksum)
 else: 
-        if type is None: 
-                type = "word"
-        if type == "word": 
-                password = genWordPassword(bits);
-        if type == "character": 
-                password = genCharPassword(bits);
+        password = genWordPassword(bits);
         print password
         print genWordChecksum(password)
