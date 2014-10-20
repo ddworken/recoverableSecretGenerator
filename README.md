@@ -14,7 +14,21 @@ If you want to verify a password's checksum:
 
 If the above is used with an incorrect password, then the word will automatically be recovered for the user. 
 
-authenticate.py provides example code for the usage of this module for verifying authentication via a sha256 hash and this password generation method. 
+authenticate.py provides example code for the usage of this module for verifying authentication via a sha256 hash and this password generation method. Example Usage: 
+
+```(trusty)david@localhost:~/passwordGen$ python authenticate.py ```
+
+```Input the password: ```chambermaid escapade eyetooth newborn stormy
+
+```Input the checksum: ```reward
+
+```You forgot the word: molecule```
+
+```Your correct password is: chambermaid escapade eyetooth molecule newborn stormy```
+
+```Checksum verified.```
+
+```Access Granted!```
 
 ###To Do: 
 * Correct misspelled words to correct words through Levenshtein distance. (Use python-Levenshtein)
