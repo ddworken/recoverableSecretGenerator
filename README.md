@@ -17,11 +17,9 @@ If the above is used with an incorrect password, then the word will automaticall
 authenticate.py provides example code for the usage of this module for verifying authentication via a sha256 hash and this password generation method. 
 
 ###To Do: 
-* Correct misspelled words or mis-capitalized words to correct words through comparisons to list of correct words. 
+* Correct misspelled words to correct words through Levenshtein distance. (Use python-Levenshtein)
 
 ###Notes: 
 * This program is still in alpha and non-backwards compatible changes are likely. 
 * The bits of entropy calculation is only a rough estimate. This is because the math needed to solve for words needed given a certain number of bits, requires a series of complex calculations based off of each case. 
   * E.g. for 5 words, one must calculate the possibilities of 1 of a kind, 2 of a kind, 2 of a kind and 2 of a kind, 2 of a kind and 3 of a kind, 4 of a kind, and 5 of a kind. Generalizing this for up to n words, requires a complex understanding of Partitions (number theory concept). As I lack this background, I am continuing to use this rought approximation. 
-  * In specially crafted cases, passwords may have less entropy than requested. 
-* This program uses Python's psuedo random number generator, randint. The exact value of the random ints is hidden by generating a random int from 0 to 5120 and then modding them down to 0 to 512. This prevents reconstruction of Random's seed by hiding necessary information for doing so. 
