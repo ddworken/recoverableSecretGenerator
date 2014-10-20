@@ -20,6 +20,7 @@ def recoverWord(password, checksum):
         return recoveredWord
 
 def authenticate(password, checksum): 
+        password = password.lower()
         if genWordChecksum(password) != checksum:
                 print "You forgot the word: " + recoverWord(password, checksum)
                 forgottenWord = recoverWord(password, checksum)
