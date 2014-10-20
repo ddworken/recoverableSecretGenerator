@@ -12,7 +12,7 @@ bits = args.bits
 
 
 def genWordPassword(bits):
-        words = int(math.ceil(int(bits) / math.log(len(wordList), 2)))#8#change this to the formula you get from michael...#((56*math.log(2)+2*math.sqrt(1)*math.pi)/(math.log(len(wordList))))
+        words = int(math.ceil(int(bits) / math.log(len(wordList), 2)))
         password = ""
         for i in range(0,words):
                 rand = randint(1, len(wordList))
