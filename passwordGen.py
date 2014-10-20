@@ -15,7 +15,7 @@ def genWordPassword(bits):
         words = int(math.ceil(int(bits) / math.log(len(wordList), 2)))
         password = ""
         for i in range(0,words):
-                rand = randint(1, len(wordList))
+                rand = randint(1, len(wordList) * 10) % len(wordList)
                 password += wordList[rand]
                 password += " "
         password = password[:-1]
