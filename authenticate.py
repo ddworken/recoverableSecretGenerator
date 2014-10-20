@@ -26,9 +26,8 @@ def authenticate(password, checksum):
                 forgottenWord = recoverWord(password, checksum)
                 password += " "
                 password += forgottenWord
-                print password
                 password = sortPasswordString(password)
-                print password
+                print "Your correct password is: " + password
         print "Checksum verified."
 
         return isHashAuthenticated(hashlib.sha256(password).hexdigest())
