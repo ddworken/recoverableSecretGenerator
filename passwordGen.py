@@ -38,7 +38,7 @@ def genCharPassword(bits):
 def genWordChecksum(password):
         sum = 0;
         passwordList = password.split(" ")
-        for i in range(1, len(passwordList)): 
+        for i in range(0, len(passwordList)): 
                 sum += wordList.index(passwordList[i])
         modSum = sum % len(wordList)
         return wordList[modSum]
