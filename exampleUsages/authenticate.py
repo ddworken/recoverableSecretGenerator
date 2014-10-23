@@ -59,10 +59,10 @@ def authenticate(password, checksum):
                 password = sortPasswordString(password)
                 print "Your correct password is: " + password
         print "Checksum verified."
-        return isHashAuthenticated(hashlib.sha256(password).hexdigest())
+        return isHashAuthenticated(hashlib.sha256(password+checksum).hexdigest())
 
 def isHashAuthenticated(hashOfInput):
-        if hashOfInput == "a1153566ad3e8a38433db1befdf2dcb5144710b7b033cc68f47622a5a6bab095": 
+        if hashOfInput == "1bb554366b7941e5d1b3b6d6bd48909d1791dcf0e46b9828e3b1b572f73ed0b3": 
                 return "Access Granted!"
         return "Access Denied."
 
