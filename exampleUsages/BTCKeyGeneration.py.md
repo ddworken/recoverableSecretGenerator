@@ -1,0 +1,1 @@
+BTCKeyGeneration.py generates a BTC private key address pair in a deterministic manner from the supplied password and checksum. It does so by running the recovery algorithms on the supplied password and checksum, followed by running the full password through a brainwallet generator. 
