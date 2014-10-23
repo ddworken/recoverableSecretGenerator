@@ -1,4 +1,4 @@
-passwordGen
+Recoverable Secret Generator
 ===========
 Generate random passwords with an included checksum/parity word. Passwords will be generated to give X bits of entropy. Passwords are made to be easily stored in human memory. This is done through using the PGP word list (specially chosen distinct words), allowing incorrect ordering of words, allowing authentication when up to one word is missing, and using Levenshtein distance matching to correct incorrect words. 
 
