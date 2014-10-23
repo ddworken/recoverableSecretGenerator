@@ -2,14 +2,14 @@ BTCKeyGeneration.py generates a BTC private key address pair in a deterministic 
 
 Usage: 
 
-```(trusty)david@localhost:~/gitSecretInWords/s/passwordGen$ python BTCKey.py 
+```(trusty)david@localhost:~/passwordGen/exampleUsages/$ python BTCKey.py ```
 
-Input the password: barbecue goggles neptune trojan trombonist universe
+```Input the password: ```barbecue goggles neptune trojan trombonist universe
 
-Input the checksum: responsive
+```Input the checksum: ```responsive
 
-Checksum verified.
+```Checksum verified.```
 
-Private key: 5K3EE6bFKcjYdnjx3fqRNWcDRGQy1RK4LU5ougm7YxZQtCTPXXY
+```Private key: 5K3EE6bFKcjYdnjx3fqRNWcDRGQy1RK4LU5ougm7YxZQtCTPXXY```
 
-Address: 1DGd3W6crQXxKpy2ohi5VjEKqHHJxT7wMr
+```Address: 1DGd3W6crQXxKpy2ohi5VjEKqHHJxT7wMr```
