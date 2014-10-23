@@ -1,5 +1,33 @@
 #!/bin/python
 import hashlib
+import Levenshtein
+
+def containsBadWords(password):
+        passwordList = password.split(" ")
+        for i in range(0, len(passwordList)):
+                if passwordList[i] not in wordList: 
+                        print passwordList[i] + " is not in the word list!"
+                        return True
+        return False
+
+def fixPasswordWithBadWords(password):
+        bestMatch = ""
+        bestMatchDistance = 0
+        passwordList = password.split(" ")
+        for i in range(0, len(passwordList)):
+                for j in range(0, len(wordList)):
+                        if Levenshtein.ratio(passwordList[i], wordList[j]) > bestMatchDistance:
+                                bestMatch = wordList[j]
+                                bestMatchDistance = Levenshtein.ratio(passwordList[i], wordList[j])
+                                #print "Set bestMatch to " + wordList[j]
+                                #print "set bestMatchDistance to " + str(bestMatchDistance)
+                #print passwordList[i] + " was corrected to " + bestMatch
+                passwordList[i] =  bestMatch 
+                bestMatch = ""
+                bestMatchDistance = 0
+        passwordList.sort()
+        password = ' '.join(passwordList)
+        return password
 
 def sortPasswordString(password):
         passwordList = password.split(" ")
@@ -10,7 +38,7 @@ def sortPasswordString(password):
 def genWordChecksum(password):
         sum = 0;
         passwordList = password.split(" ")
-        for i in range(1, len(passwordList)): 
+        for i in range(0, len(passwordList)): 
                 sum += wordList.index(passwordList[i])
         modSum = sum % len(wordList)
         return wordList[modSum]
@@ -21,6 +49,8 @@ def recoverWord(password, checksum):
 
 def authenticate(password, checksum): 
         password = password.lower()
+        if containsBadWords(password):
+                password = fixPasswordWithBadWords(password)
         if genWordChecksum(password) != checksum:
                 print "You forgot the word: " + recoverWord(password, checksum)
                 forgottenWord = recoverWord(password, checksum)
@@ -29,11 +59,10 @@ def authenticate(password, checksum):
                 password = sortPasswordString(password)
                 print "Your correct password is: " + password
         print "Checksum verified."
-
         return isHashAuthenticated(hashlib.sha256(password).hexdigest())
 
 def isHashAuthenticated(hashOfInput):
-        if hashOfInput == "81e2ff51f8b8d810291f00b882b286573756938c3f95bc0029ce69d580a97204": 
+        if hashOfInput == "a1153566ad3e8a38433db1befdf2dcb5144710b7b033cc68f47622a5a6bab095": 
                 return "Access Granted!"
         return "Access Denied."
 
