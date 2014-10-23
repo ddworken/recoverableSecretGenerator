@@ -16,4 +16,4 @@ authenticate.py provides example code for the usage of this module for verifying
 
 ```Access Granted!```
 
-authenticate.py will authenticate a user against a prestored sha256 hash of the password (not the checksum). 
+authenticate.py will authenticate a user against a prestored sha256 hash of the password. 
