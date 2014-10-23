@@ -14,27 +14,6 @@ If you want to verify a password's checksum:
 
 If the above is used with an incorrect password, then the word will automatically be recovered for the user. 
 
-authenticate.py provides example code for the usage of this module for verifying authentication via a sha256 hash and this password generation method. Example Usage: 
-
-```(trusty)david@localhost:~/passwordGen$ python authenticate.py```
-
-```Input the password: ```barbecue goggles neptune trojn trombonist   
-
-```Input the checksum: ```responsive
-
-```trojn is not in the word list!```
-
-```You forgot the word: universe```
-
-```Your correct password is: barbecue goggles neptune trojan trombonist universe```
-
-```Checksum verified.```
-
-```Access Granted!```
-
-###To Do: 
-* Correct misspelled words to correct words through Levenshtein distance. (Use python-Levenshtein)
-
 ###Notes: 
 * This program is still in alpha and non-backwards compatible changes are likely. 
 * The bits of entropy calculation is only a rough estimate. This is because the math needed to solve for words needed given a certain number of bits, requires a series of complex calculations based off of each case. 
