@@ -1,6 +1,6 @@
 passwordGen
 ===========
-Generate random passwords with an included checksum/parity word. Passwords will be generated to give X bits of entropy. Passwords are made to be easily stored in human memory. This is done through using the PGP word list (specially chosen distinct words), allowing incorrect ordering of words, and allowing authentication when up to one word is missing. 
+Generate random passwords with an included checksum/parity word. Passwords will be generated to give X bits of entropy. Passwords are made to be easily stored in human memory. This is done through using the PGP word list (specially chosen distinct words), allowing incorrect ordering of words, allowing authentication when up to one word is missing, and using Levenshtein distance matching to correct incorrect words. 
 
 ###Usage
 
@@ -16,15 +16,17 @@ If the above is used with an incorrect password, then the word will automaticall
 
 authenticate.py provides example code for the usage of this module for verifying authentication via a sha256 hash and this password generation method. Example Usage: 
 
-```(trusty)david@localhost:~/passwordGen$ python authenticate.py ```
+```(trusty)david@localhost:~/passwordGen$ python authenticate.py```
 
-```Input the password: ```chambermaid escapade eyetooth newborn stormy
+```Input the password: ```barbecue goggles neptune trojn trombonist   
 
-```Input the checksum: ```reward
+```Input the checksum: ```responsive
 
-```You forgot the word: molecule```
+```trojn is not in the word list!```
 
-```Your correct password is: chambermaid escapade eyetooth molecule newborn stormy```
+```You forgot the word: universe```
+
+```Your correct password is: barbecue goggles neptune trojan trombonist universe```
 
 ```Checksum verified.```
 
