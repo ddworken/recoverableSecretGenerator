@@ -51,6 +51,9 @@ def authenticate(password, checksum):
         password = password.lower()
         if containsBadWords(password):
                 password = fixPasswordWithBadWords(password)
+        if containsBadWords(checksum):
+                checksum = fixPasswordWithBadWords(checksum)
+                print "Your correct checksum is: " + checksum
         if genWordChecksum(password) != checksum:
                 print "You forgot the word: " + recoverWord(password, checksum)
                 forgottenWord = recoverWord(password, checksum)
