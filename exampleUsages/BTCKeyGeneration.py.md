@@ -10,6 +10,8 @@ Usage:
 
 ```Checksum verified.```
 
-```Private key: 5K3EE6bFKcjYdnjx3fqRNWcDRGQy1RK4LU5ougm7YxZQtCTPXXY```
+```Private key: 5J2VMSchvZ9exa9BEWXubDJgecKwFiUzuDaskRKvrZphGkHy2FV```
 
-```Address: 1DGd3W6crQXxKpy2ohi5VjEKqHHJxT7wMr```
+```Public key: 58f96ff5a9a1d2e4edb5b807ce139c7179b916c4c5a683ee```
+
+```Address: 197TH6JemVvPCbMiqwZsVHmBFE55nNjpwP```
