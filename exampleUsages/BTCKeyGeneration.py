@@ -75,7 +75,7 @@ def containsBadWords(password):
         passwordList = password.split(" ")
         for i in range(0, len(passwordList)):
                 if passwordList[i] not in wordList: 
-                        print passwordList[i] + " is not in the word list!"
+                        #print passwordList[i] + " is not in the word list!"
                         return True
         return False
 
