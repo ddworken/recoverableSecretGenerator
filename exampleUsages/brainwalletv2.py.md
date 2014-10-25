@@ -1,0 +1,1 @@
+brainwalletv2.py is a new brainwallet scheme based off of the original brainwallet scheme. Instead of a simple sha256 hash being used to generate the brainwallet, 100 rounds of scrypt are used to generate the address key pair. 
