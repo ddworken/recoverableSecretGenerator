@@ -27,14 +27,6 @@ def sortPasswordString(password):
         password = ' '.join(passwordList)
         return password
 
-def genCharPassword(bits):
-        chars = int(math.ceil(int(bits) / math.log(26, 2)))
-        password = ""
-        for i in range(1, chars):
-                rand = randint(97, 122)
-                password += chr(rand)
-        return password
-
 def genWordChecksum(password):
         sum = 0;
         passwordList = password.split(" ")
