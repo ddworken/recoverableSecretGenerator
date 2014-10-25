@@ -1,3 +1,4 @@
 python-Levenshtein
 ecdsa
 scrypt
+multiprocessing
