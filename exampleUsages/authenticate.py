@@ -1,6 +1,7 @@
 #!/bin/python
 import hashlib
-import Levenshtein
+import sys
+sys.path.insert(0, '../')
 import library.mainLib
 
 def authenticate(password, checksum):

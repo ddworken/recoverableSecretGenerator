@@ -1,5 +1,7 @@
 #!/bin/python
 import hashlib
+import sys
+sys.path.insert(0, '../')
 import library.mainLib
 import library.BTCLib
 

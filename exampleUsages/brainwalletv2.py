@@ -2,6 +2,8 @@
 import hashlib
 import scrypt
 from multiprocessing import Pool
+import sys
+sys.path.insert(0, '../')
 import library.BTCLib
 import library.mainLib
 
