@@ -9,3 +9,4 @@ with open(filename, 'rb') as i:
     reader = csv.reader(i)
     for row in reader:
         print arrayname + " = " + str(row).replace(' ', '\',\'')
+
