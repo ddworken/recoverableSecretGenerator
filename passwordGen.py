@@ -36,6 +36,9 @@ if args.verify is not None:
     if wordList.index(args.checksum) != wordList.index(library.mainLib.genWordChecksum(args.password)):
         print "You forgot the word: " + library.mainLib.recoverWord(args.password, args.checksum)
 else:
-    password = genWordPassword(bits);
-    print password
-    print library.mainLib.genWordChecksum(password)
+    if bits < 10:
+        print "Error. Bits of entropy must be greater than 10."
+    else:
+        password = genWordPassword(bits);
+        print password
+        print library.mainLib.genWordChecksum(password)
