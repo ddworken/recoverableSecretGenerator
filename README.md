@@ -16,6 +16,7 @@ If the above is used with an incorrect password, then the word will automaticall
 
 ###Installation
 
+    sudo apt-get install python-dev libssl-dev
     git clone https://github.com/ddworken/recoverableSecretGenerator.git
     cd recoverableSecretGenerator
     sudo pip -r requirements.txt
